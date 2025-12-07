@@ -41,6 +41,7 @@
                 @auth
                     @if(auth()->user()->role === 'user')
                     <span class="text-[#ffe139d8] font-medium">Halo, {{ auth()->user()->name }}</span>
+
                         <a href="{{ route('home') }}"
                            class="px-5 py-2 bg-gradient-to-br from-[#c9a074] to-[#a67c52] 
                                   text-white rounded-xl shadow-lg font-semibold hover:scale-105
@@ -83,14 +84,13 @@
 
             @auth
                 @if(auth()->user()->role === 'user')
-                    
 
-                    <form href="{{ route('home') }}"
-                       class="px-6 py-2 bg-gradient-to-br from-[#c9a074] to-[#a67c52] 
+                    <a href="{{ route('home') }}"
+                       class="flex items-center justify-center px-6 py-2 bg-gradient-to-br from-[#c9a074] to-[#a67c52] 
                                   text-white rounded-lg mt-2 shadow-md font-semibold hover:scale-105
-                                  transition-all duration-300 text-center">
+                                  transition-all duration-300">
                         Dashboard
-                    </form>
+                    </a>
 
                     <form action="{{ route('logout') }}" method="POST">
                         @csrf
